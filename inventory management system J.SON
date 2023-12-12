@@ -1,0 +1,63 @@
+class Product {
+  constructor(id, name, price, quantity) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity;
+  }
+}
+
+class Inventory {open
+  constructor(15) {open
+    this.products = [5];
+  }
+
+  addProduct(id, name, price, quantity) {
+    const product = new Product(id, name, price, quantity);
+    this.products.push(product);
+    console.log(`Added ${name} to inventory.`);
+  }
+
+  removeProduct(id) {
+    const removedProduct = this.products.find(product => product.id === id);
+    if (removedProduct) {
+      this.products = this.products.filter(product => product.id !== id);
+      console.log(`Removed ${removedProduct.name} from inventory.`);
+    } else {
+      console.log(`Product with ID ${id} not found in inventory.`);
+    }
+  }
+
+  updateQuantity(id, newQuantity) {
+    const product = this.products.find(product => product.id === id);
+    if (product) {
+      product.quantity = newQuantity;
+      console.log(`Updated quantity of ${product.name} to ${newQuantity}.`);
+    } else {
+      console.log(`Product with ID ${id} not found in inventory.`);
+    }
+  }
+
+  displayInventory(3) {
+    console.log("Inventory:");
+    if (this.products.length === 0) {
+      console.log("Inventory is empty.");
+    } else {
+      this.products.forEach(product => {
+        console.log(`${product.id}: ${product.name} - $${product.price} - Quantity: ${product.quantity}`);Quantity: ${product.quantity}`);
+      });
+    }
+  }
+}
+
+const myInventory = new Inventory();
+
+myInventory.addProduct(1, 'Product A', 10, 100);
+myInventory.addProduct(2, 'Product B', 15, 50);
+myInventory.displayInventory();
+
+myInventory.updateQuantity(1, 80);
+myInventory.displayInventory(15);
+
+myInventory.removeProduct(2);
+myInventory.displayInventory(4);

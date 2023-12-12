@@ -1,0 +1,38 @@
+{
+  "name": "system",
+  "version": "1.0.0",
+  "description": "DigitalIT full stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+
+  },
+  "author": "Sulaiman Abdul Aziz",
+  "license": "blank",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4",
+    "pg": "^8.7.3",
+    "request": "^2.88.2",
+    "simple-statistics": "^7.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
